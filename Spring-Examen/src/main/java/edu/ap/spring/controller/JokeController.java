@@ -1,5 +1,6 @@
 package edu.ap.spring.controller;
 
+import org.json.JSONObject;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +26,10 @@ public class JokeController {
        RestTemplate restTemplate = new RestTemplate();
        String result = restTemplate.getForObject(uri, String.class);
        System.out.println(result);
-        return "";
+       JSONObject jsonObj = new JSONObject(result);
+       String quote = jsonObj.getJSONObject("value").getString("joke");
+       model.addAttribute("joke", quote);
+       return "joke";
    }
    
    @RequestMapping("/")
