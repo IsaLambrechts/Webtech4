@@ -7,10 +7,7 @@
 <title>Spring Boot</title>
 </head>
 <body>
-  <h1>Spring Boot - MVC web application example</h1>
-  <hr>
-
-  <h2>Your name is ${name}</h2>
+  <h2>${joke}</h2>
 
 </body>
 </html>

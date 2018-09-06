@@ -11,18 +11,14 @@
 <title>Spring Boot</title>
 </head>
 <body>
-  <h1>Spring Boot - MVC web application example</h1>
-  <hr>
 
   <div class="form">
-    <form action="hello" method="post" onsubmit="return validate()">
-      <table>
-        <tr>
-          <td>Enter Your name</td>
-          <td><input id="name" name="name"></td>
-          <td><input type="submit" value="Submit"></td>
-        </tr>
-      </table>
+    <form action="joke_post" method="post" onsubmit="return validate()">
+      <label>Enter your lastname</label>
+      <input id="name" name="name"><br/><br/>
+      <label>Enter your firstname</label>
+      <input id="firstname" name="firstname"><br/><br/>
+      <input type="submit" value="Submit">
     </form>
   </div>
 
