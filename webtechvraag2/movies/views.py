@@ -24,7 +24,6 @@ def get_movies(request):
 
 def post_movie(request, movie):
     actors = r.hgetall("movies:" + movie)
-    print(str(actors))
     actor_names = []
     if str(actors) != '{}':
         for actor in actors:
