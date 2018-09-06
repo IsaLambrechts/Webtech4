@@ -22,8 +22,13 @@ def get_movies(request):
     for movie in movies:
         x = movie.decode().split(':')
         titles.append(x[1])
-    return render(request, 'movies/index.html', {'movies': titles})
+    return render(request, 'movies/movies.html', {'movies': titles})
 
 
 def post_movie(request, movie):
-    return ""
+    actors = r.hgetall("movies:" + movie)
+    print(str(actors))
+    actor_names = []
+    for actor in actors:
+        actor_names.append(str(actors[actor])[2:-1])
+    return render(request, 'movies/actors.html', {'actors': actor_names, 'movie': movie})
