@@ -35,9 +35,7 @@ public class JokeController {
        String quote = jsonObj.getJSONObject("value").getString("joke");
        model.addAttribute("joke", quote);
        if(jokeRepository.findByJoke(quote) == null) {
-           System.out.println(quote);
            jokeRepository.save(new Joke(quote));
-           System.out.println(jokeRepository.findByJoke(quote));
        }
        return "joke";
    }
